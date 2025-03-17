@@ -1,0 +1,275 @@
+/* Galactic Theme Styles */
+body {
+     padding: 20px;
+     background-color: #0a0a23;
+     /* Deep space background */
+     background-image: url('');
+     /* Add a space-themed background image */
+     background-size: cover;
+     background-attachment: fixed;
+     font-family: 'Orbitron', sans-serif;
+     /* Futuristic font */
+     color: #ffffff;
+     /* White text for contrast */
+}
+
+.container {
+     background-color: rgba(10, 10, 35, 0.9);
+     /* Semi-transparent dark background */
+     border-radius: 10px;
+     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+     /* Glowing cyan shadow */
+     padding: 20px;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     border: 1px solid rgba(0, 255, 255, 0.3);
+     /* Neon border */
+}
+
+h1 {
+     color: #00ffff;
+     /* Neon cyan for headings */
+     text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+     /* Glowing effect */
+}
+
+label {
+     color: #ffffff;
+     /* White text for labels */
+}
+
+.centered-textarea {
+     display: block;
+     margin: 0 auto;
+     width: 100%;
+     min-height: 150px;
+     padding: 10px;
+     box-sizing: border-box;
+     border: 2px solid #00ffff;
+     /* Neon cyan border */
+     border-radius: 5px;
+     resize: none;
+     background-color: rgba(0, 0, 0, 0.7);
+     /* Semi-transparent black */
+     color: #ffffff;
+     /* White text */
+     font-family: 'Orbitron', sans-serif;
+}
+
+.centered-textarea::placeholder {
+     color: #00ffff;
+     /* Neon cyan placeholder */
+     opacity: 0.7;
+     text-align: center;
+}
+
+.btn-primary {
+     background-color: #00ffff;
+     /* Neon cyan */
+     border: none;
+     color: #0a0a23;
+     /* Dark text for contrast */
+     font-family: 'Orbitron', sans-serif;
+     text-shadow: 0 0 5px #00ffff;
+     box-shadow: 0 0 10px #00ffff;
+     transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+     background-color: #00b3b3;
+     /* Darker cyan on hover */
+     box-shadow: 0 0 20px #00ffff;
+}
+
+.success-message {
+     color: #00ff00;
+     /* Neon green for success messages */
+     text-shadow: 0 0 10px #00ff00;
+     margin-top: 10px;
+}
+
+.footer {
+     background-color: rgba(10, 10, 35, 0.9);
+     /* Semi-transparent dark background */
+     padding: 10px;
+     text-align: center;
+     font-size: 16px;
+     color: #00ffff;
+     /* Neon cyan text */
+     margin-top: 50px;
+     border-top: 1px solid rgba(0, 255, 255, 0.3);
+     /* Neon border */
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+}
+
+.footer p {
+     margin: 0;
+     display: inline-block;
+     margin-right: 30px;
+}
+
+.container-buttons {
+     margin-top: 20px;
+     text-align: center;
+}
+
+.container-buttons .btn {
+     margin: 5px;
+}
+
+#result {
+     padding: 10px;
+     margin-top: 20px;
+     border-radius: 5px;
+     background-color: rgba(0, 0, 0, 0.7);
+     /* Semi-transparent black */
+     color: #ffffff;
+     /* White text */
+     border: 1px solid rgba(0, 255, 255, 0.3);
+     /* Neon border */
+}
+
+.form-check {
+     display: flex;
+     margin-top: 10px;
+     padding: 14px;
+     align-items: center;
+     border: 2px solid #00ffff;
+     /* Neon cyan border */
+     border-radius: 8px;
+     cursor: pointer;
+     transition: background-color 0.3s ease, border-color 0.3s ease;
+     background-color: rgba(0, 0, 0, 0.7);
+     /* Semi-transparent black */
+}
+
+.form-check:hover {
+     background-color: rgba(0, 255, 255, 0.1);
+     /* Light cyan hover */
+     border-color: #00b3b3;
+     /* Darker cyan on hover */
+}
+
+.form-check-input {
+     margin-right: 10px;
+     opacity: 0;
+}
+
+.disable {
+     display: none;
+}
+
+/* Galactic Navbar */
+.bg-galactic {
+     background-color: #0a0a23;
+     /* Deep space background */
+     border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+     /* Neon border */
+}
+
+.bg-galactic .navbar-brand {
+     color: #00ffff !important;
+     /* Neon cyan */
+     font-family: 'Orbitron', sans-serif;
+     font-size: 1.5rem;
+}
+
+.bg-galactic .navbar-brand i {
+     margin-right: 10px;
+}
+
+.bg-galactic .nav-link {
+     color: #ffffff !important;
+     /* White text */
+     font-family: 'Orbitron', sans-serif;
+     transition: color 0.3s ease;
+}
+
+.bg-galactic .nav-link:hover {
+     color: #00ffff !important;
+     /* Neon cyan on hover */
+}
+
+.bg-galactic-dropdown {
+     background-color: #0a0a23;
+     /* Deep space background */
+     border: 1px solid rgba(0, 255, 255, 0.3);
+     /* Neon border */
+}
+
+.bg-galactic-dropdown .dropdown-item {
+     color: #ffffff;
+     /* White text */
+     font-family: 'Orbitron', sans-serif;
+}
+
+.bg-galactic-dropdown .dropdown-item:hover {
+     background-color: rgba(0, 255, 255, 0.1);
+     /* Light cyan hover */
+     color: #00ffff;
+     /* Neon cyan */
+}
+
+/* Galactic Footer */
+.footer {
+     background-color: rgba(10, 10, 35, 0.9);
+     /* Semi-transparent dark background */
+     padding: 10px;
+     text-align: center;
+     font-size: 16px;
+     color: #00ffff;
+     /* Neon cyan text */
+     margin-top: 50px;
+     border-top: 1px solid rgba(0, 255, 255, 0.3);
+     /* Neon border */
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+}
+
+.footer p {
+     margin: 0;
+     display: inline-block;
+     margin-right: 30px;
+}
+
+#inputOfPrefix,
+#inputOfAdmin {
+     padding: 13px;
+     width: 200px;
+     border: 2px solid #00ffff;
+     /* Neon cyan border */
+     border-radius: 8px;
+     cursor: pointer;
+     transition: background-color 0.3s ease, border-color 0.3s ease;
+     background-color: rgba(0, 0, 0, 0.7);
+     /* Semi-transparent black */
+     color: #ffffff;
+     /* White text */
+     font-family: 'Orbitron', sans-serif;
+}
+
+#inputOfPrefix::placeholder,
+#inputOfAdmin::placeholder {
+     color: #00ffff;
+     /* Neon cyan placeholder */
+     opacity: 0.7;
+}
+
+#listOfCommands,
+#listOfCommandsEvent,
+#prefixOfCommands,
+#adminOfCommands {
+     border: none !important;
+}
+
+#listOfCommands:not(.modal),
+#listOfCommandsEvent:not(.modal),
+#prefixOfCommands:not(.modal),
+#adminOfCommands:not(.modal) {
+     box-shadow: none !important;
+}

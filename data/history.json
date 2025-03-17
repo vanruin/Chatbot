@@ -1,0 +1,73 @@
+[
+  {
+    "userid": "61573506706249",
+    "prefix": "!",
+    "admin": [
+      ""
+    ],
+    "blacklist": [],
+    "enableCommands": [
+      {
+        "commands": [
+          "hi",
+          "info",
+          "active-session",
+          "adduser",
+          "ai",
+          "anime",
+          "blackbox",
+          "dictionary",
+          "bot",
+          "cmd",
+          "cog",
+          "deepseek",
+          "emojimix",
+          "rules",
+          "fbcoverv2",
+          "file",
+          "flux",
+          "fun",
+          "goiadminn",
+          "help",
+          "hercai",
+          "install",
+          "insult",
+          "listbox",
+          "listfriend",
+          "logout",
+          "mathematics",
+          "music",
+          "out",
+          "pinterest",
+          "poli",
+          "post",
+          "prefix",
+          "quote",
+          "rankup",
+          "recipe",
+          "sendnoti",
+          "shoti",
+          "slap",
+          "stalk",
+          "teach",
+          "trans",
+          "uid",
+          "unsend",
+          "uptime"
+        ]
+      },
+      {
+        "handleEvent": [
+          "auto",
+          "welcomenoti",
+          "antiout",
+          "autopost",
+          "resend",
+          "soyeon",
+          "waifu-bot"
+        ]
+      }
+    ],
+    "time": 357
+  }
+]
