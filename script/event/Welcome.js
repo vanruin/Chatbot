@@ -1,11 +1,12 @@
-const axios = require('axios');
-const fs = require('fs');
+const axios = require("axios");
+const fs = require("fs");
 
 module.exports.config = {
     name: "welcomenoti",
     version: "1.3.0", // Increment version for decorated code.
     credits: "Aminus Sordar", // Add credits.
-    description: "Sends a decorated welcome message with an image when a new member joins.",
+    description:
+        "Sends a decorated welcome message with an image when a new member joins.",
     usages: "No command usage, triggered automatically.",
     cooldown: 5, // Add a cooldown (in seconds).
 };
@@ -22,19 +23,26 @@ module.exports.handleEvent = async function ({ api, event }) {
 
             const maxLength = 15;
             if (name.length > maxLength) {
-                name = name.substring(0, maxLength - 3) + '...';
+                name = name.substring(0, maxLength - 3) + "...";
             }
 
             const groupInfo = await api.getThreadInfo(event.threadID);
-            const groupIcon = groupInfo.imageSrc || "https://i.ibb.co/G5mJZxs/rin.jpg";
+            const groupIcon =
+                groupInfo.imageSrc || "https://i.ibb.co/G5mJZxs/rin.jpg";
             const memberCount = groupInfo.participantIDs.length;
             const groupName = groupInfo.threadName || "this group";
-            const background = groupInfo.imageSrc || "https://i.ibb.co/4YBNyvP/images-76.jpg";
+            const background =
+                groupInfo.imageSrc || "https://i.ibb.co/4YBNyvP/images-76.jpg";
             const ownerID = groupInfo.adminIDs[0].id;
             const ownerInfo = await api.getUserInfo(ownerID);
             const ownerName = ownerInfo[ownerID].name;
-            const joinDate = new Date(event.logMessageData.time * 1000).toLocaleString();
-            const adminNames = groupInfo.adminIDs.map(async admin => (await api.getUserInfo(admin.id))[admin.id].name);
+            const joinDate = new Date(
+                event.logMessageData.time * 1000,
+            ).toLocaleString();
+            const adminNames = groupInfo.adminIDs.map(
+                async (admin) =>
+                    (await api.getUserInfo(admin.id))[admin.id].name,
+            );
             const adminsString = (await Promise.all(adminNames)).join(", ");
 
             const startTime = global.startTime;
@@ -52,10 +60,12 @@ module.exports.handleEvent = async function ({ api, event }) {
             const url = `https://joshweb.click/canvas/welcome?name=${encodeURIComponent(name)}&groupname=${encodeURIComponent(groupName)}&groupicon=${encodeURIComponent(groupIcon)}&member=${memberCount}&uid=${senderID}&background=${encodeURIComponent(background)}&owner=${encodeURIComponent(ownerName)}&joindate=${encodeURIComponent(joinDate)}&admins=${encodeURIComponent(adminsString)}&uptime=${encodeURIComponent(uptime)}`;
 
             try {
-                const { data } = await axios.get(url, { responseType: 'arraybuffer' });
-                const filePath = './cache/welcome_image.jpg';
-                if (!fs.existsSync('./cache')) {
-                    fs.mkdirSync('./cache');
+                const { data } = await axios.get(url, {
+                    responseType: "arraybuffer",
+                });
+                const filePath = "./cache/welcome_image.jpg";
+                if (!fs.existsSync("./cache")) {
+                    fs.mkdirSync("./cache");
                 }
                 fs.writeFileSync(filePath, Buffer.from(data));
 
@@ -71,15 +81,18 @@ module.exports.handleEvent = async function ({ api, event }) {
 ║ ──────────────────
 ║ And Make Lots Of Friends =)
 ║ ──────-°°__𝗧𝗿𝘂𝘀𝘁 𝗺e 🔐 °__!!>☁️✨❤️
-║ My Owner ✦͙͙͙͙❥⃝∗⁎.ʚ 𝗔𝗺𝗶𝗻𝘂𝗹 𝗦𝗼𝗿𝗱𝗮𝗿 ɞ.⁎∗❥⃝**͙✦͙͙͙
+║ My Owner ✦͙͙͙͙❥⃝∗⁎.ʚ Jovan Reguya ɞ.⁎∗❥⃝**͙✦͙͙͙
 ║ ❤️ Love you 😘 ummmma ❤️😍
 ╚══════════════════════╝`;
 
-                await api.sendMessage({
-                    body: welcomeMessage,
-                    attachment: fs.createReadStream(filePath)
-                }, event.threadID, () => fs.unlinkSync(filePath));
-
+                await api.sendMessage(
+                    {
+                        body: welcomeMessage,
+                        attachment: fs.createReadStream(filePath),
+                    },
+                    event.threadID,
+                    () => fs.unlinkSync(filePath),
+                );
             } catch (imageError) {
                 console.error("Error fetching welcome image:", imageError);
 
@@ -95,14 +108,20 @@ module.exports.handleEvent = async function ({ api, event }) {
 ║ ──────────────────
 ║ And Make Lots Of Friends =)
 ║ ──────-°°__𝗧𝗿𝘂𝘀𝘁 𝗺e 🔐 °__!!>☁️✨❤️
-║ My Owner ✦͙͙͙͙❥⃝∗⁎.ʚ 𝗔𝗺𝗶𝗻𝘂𝗹 𝗦𝗼𝗿𝗱𝗮𝗿 ɞ.⁎∗❥⃝**͙✦͙͙͙
+║ My Owner ✦͙͙͙͙❥⃝∗⁎.ʚ Jovan Reguya ɞ.⁎∗❥⃝**͙✦͙͙͙
 ║ ❤️ Love you 😘 ummmma ❤️😍
 ╚══════════════════════╝`;
                 await api.sendMessage({ body: welcomeMessage }, event.threadID);
             }
         } catch (generalError) {
-            console.error("Error during welcome message processing:", generalError);
-            await api.sendMessage("An error occurred during welcome message processing.", event.threadID);
+            console.error(
+                "Error during welcome message processing:",
+                generalError,
+            );
+            await api.sendMessage(
+                "An error occurred during welcome message processing.",
+                event.threadID,
+            );
         }
     }
 };
